@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Report</title>
+    <link rel="stylesheet" href="laporan_gaji.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="menu-item">
+                <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+            </div>
+            <div class="menu-item active">
+                <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="tambah_data.html"><span>Kelola Data</span></a>
+            </div>
+            <div class="menu-item sign-out">
+                <a href="kafe_selaras.html"><span>Sign Out</span></a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <div class="header">
+                <h1>Selamat datang, Natasha!</h1>
+                <p>Berikut adalah informasi untuk hari ini: <strong>18 November 2024</strong></p>
+                <div class="periode">
+                    <input type="date" value="2023-01-12">
+                    <span>-</span>
+                    <input type="date" value="2023-10-12">
+                </div>
+            </div>
+
+            <div class="info-summary">
+                <div class="info-box">
+                    <span>Total Gaji</span>
+                    <h2 id="total-gaji">Rp10.550.000</h2>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Cari Pegawai">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Gaji per Jam</th>
+                            <th>Total Jam Lembur</th>
+                            <th>Total Jam Kerja</th>
+                            <th>Total Gaji</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Harsh Kadyan</td>
+                            <td>Senior Barista</td>
+                            <td>Rp150.000</td>
+                            <td>6</td>
+                            <td>15</td>
+                            <td>Rp3.450.000</td>
+                            <td style="color: green;">Terbayar</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Fisca Galih</td>
+                            <td>Senior Barista</td>
+                            <td>Rp150.000</td>
+                            <td>4</td>
+                            <td>20</td>
+                            <td>Rp3.050.000</td>
+                            <td style="color: red;">Belum Dibayar</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Anton Tresna</td>
+                            <td>Senior Barista</td>
+                            <td>Rp100.000</td>
+                            <td>3</td>
+                            <td>15</td>
+                            <td>Rp2.100.000</td>
+                            <td style="color: green;">Terbayar</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Ayasha Kayla</td>
+                            <td>Waiter</td>
+                            <td>Rp100.000</td>
+                            <td>5</td>
+                            <td>20</td>
+                            <td>Rp2.500.000</td>
+                            <td style="color: red;">Belum Dibayar</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Parvati</td>
+                            <td>Waiter</td>
+                            <td>Rp100.000</td>
+                            <td>2</td>
+                            <td>20</td>
+                            <td>Rp2.400.000</td>
+                            <td style="color: green;">Terbayar</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Salsa Nabila</td>
+                            <td>Waiter</td>
+                            <td>Rp100.000</td>
+                            <td>6</td>
+                            <td>18</td>
+                            <td>Rp2.600.000</td>
+                            <td style="color: green;">Terbayar</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>William</td>
+                            <td>Chef</td>
+                            <td>Rp100.000</td>
+                            <td>4</td>
+                            <td>20</td>
+                            <td>Rp2.800.000</td>
+                            <td style="color: red;">Belum Dibayar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
