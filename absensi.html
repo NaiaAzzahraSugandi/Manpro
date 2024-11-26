@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Pegawai</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="absensi_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item active">
+                <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="tambah_data.html"><span>Kelola Data</span></a>
+            </div>
+            <div class="menu-item sign-out">
+                <a href="kafe_selaras.html"><span>Sign Out</span></a>
+            </div>
+        </div>
+
+        <main>
+            <div class="header">
+                <h1>Absensi Pegawai</h1>
+                <div class="periode">
+                    <span>Berikut adalah informasi untuk hari ini: <strong>18 November 2024</strong></span>
+                    <span>Selamat datang, <strong>Natasha</strong>!</span>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cari pegawai..." onkeyup="searchTable()">
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Jam Masuk</th>
+                            <th>Jam Keluar</th>
+                            <th>Total Jam Kerja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>1.</td>
+                          <td>Harsh Kadyan</td>
+                          <td>Senior Barista</td>
+                          <td>08:17:30</td>
+                          <td>17:30:09</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td>Fisca Galih</td>
+                          <td>Senior Barista</td>
+                          <td>08:07:17</td>
+                          <td>17:00:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>3.</td>
+                          <td>Anton Tresna</td>
+                          <td>Senior Barista</td>
+                          <td>07:30:51</td>
+                          <td>17:05:12</td>
+                          <td>8</td>
+                        </tr>
+                        <tr>
+                          <td>4.</td>
+                          <td>Ayasha Kayla</td>
+                          <td>Waiter</td>
+                          <td>08:12:17</td>
+                          <td>17:40:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>5.</td>
+                          <td>Parvati</td>
+                          <td>Waiter</td>
+                          <td>08:27:17</td>
+                          <td>17:23:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>6.</td>
+                          <td>Salsa Nabila</td>
+                          <td>Senior Barista</td>
+                          <td>08:12:17</td>
+                          <td>16:45:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>7.</td>
+                          <td>William</td>
+                          <td>Junior Barista</td>
+                          <td>08:10:17</td>
+                          <td>16:08:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                          <td>8.</td>
+                          <td>Salma Kirana</td>
+                          <td>Security</td>
+                          <td>08:10:17</td>
+                          <td>18:11:31</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>9.</td>
+                          <td>Budiman</td>
+                          <td>Security</td>
+                          <td>07:07:17</td>
+                          <td>17:00:31</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>10.</td>
+                          <td>Hedi</td>
+                          <td>Chef</td>
+                          <td>08:07:17</td>
+                          <td>17:00:31</td>
+                          <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>11.</td>
+                            <td>Kurniawan</td>
+                            <td>Chef</td>
+                            <td>08:21:17</td>
+                            <td>17:12:31</td>
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td>12.</td>
+                            <td>Aldrick Leman</td>
+                            <td>Manager</td>
+                            <td>08:03:17</td>
+                            <td>17:10:31</td>
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td>13.</td>
+                            <td>Oktaviano Bema</td>
+                            <td>Junior Chef</td>
+                            <td>08:00:03</td>
+                            <td>17:00:19</td>
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td>14.</td>
+                            <td>Dimas Rahadian</td>
+                            <td>Waiter</td>
+                            <td>08:03:21</td>
+                            <td>17:15:27</td>
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td>15.</td>
+                            <td>Suttan Firman</td>
+                            <td>Chef</td>
+                            <td>08:11:17</td>
+                            <td>17:23:31</td>
+                            <td>9</td>
+                          </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
