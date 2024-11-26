@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Kehadiran</title>
+    <link rel="stylesheet" href="laporan_kehadiran.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="menu-item">
+                <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+            </div>
+            <div class="menu-item active">
+                <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="tambah_data.html"><span>Kelola Data</span></a>
+            </div>
+            <div class="menu-item sign-out">
+                <a href="kafe_selaras.html"><span>Sign Out</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <header class="header">
+                <h1>Selamat datang, <strong>Natasha!</strong></h1>
+                <p>Berikut adalah informasi untuk hari ini: <strong>18 November 2024.</strong></p>
+                <div class="periode">
+                   <input type="date">
+                   <p>-</p>
+                   <input type="date">
+                </div>
+            </header>
+
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Cari Pegawai">
+            </div>
+
+            <!-- Employee Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Harsh Kadyan</td>
+                            <td>Senior Barista</td>
+                            <td><button class="view-details">View Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Fisca Galih</td>
+                            <td>Senior Barista</td>
+                            <td><a href="detail_laporan_kehadiran.html" target="_blank"><button class="view-details">View Details</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Anton Tresna</td>
+                            <td>Senior Barista</td>
+                            <td><button class="view-details">View Details</button></td>
+                        </tr>
+                        <!-- Tambahkan data pegawai lainnya -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
