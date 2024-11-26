@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Pegawai</title>
+    <link rel="stylesheet" href="data_pegawai.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="menu-item">
+                <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+            </div>
+            <div class="menu-item active">
+                <a href="tambah_data.html"><span>Kelola Data</span></a>
+            </div>
+            <!-- Sub-menu (hidden by default) -->
+            <div class="sub-menu" id="kelolaDataSubMenu">
+                <div class="sub-menu-item">
+                    <a href="tambah_data.html" class="sub-menu-item">Tambah Pegawai</a>
+                </div>
+                <div class="sub-menu-item active">
+                  <a href="data_pegawai.html" class="sub-menu-item">Data Pegawai</a>
+                </div>
+                <div class="sub-menu-item">
+                  <a href="kelola_jabatan.html" class="sub-menu-item">Kelola Jabatan</a>
+                </div>
+            </div>
+            <div class="menu-item sign-out">
+                <a href="kafe_selaras.html"><span>Sign Out</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Cari Pegawai">
+            </div>
+
+            <!-- Employee Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Nomor Handphone</th>
+                            <th>Jabatan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Harsh Kadyan</td>
+                            <td>081234567890</td>
+                            <td>Senior Barista</td>
+                            <td>
+                                <a href="edit_profil.html">
+                                    <button class="edit-data">Edit Profil</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Fisca Galih</td>
+                            <td>083820213039</td>
+                            <td>Waiter</td>
+                            <td>
+                                <a href="edit_profil.html">
+                                    <button class="edit-data">Edit Profil</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>William</td>
+                            <td>08392913321</td>
+                            <td>Junior Barista</td>
+                            <td>
+                                <a href="edit_profil.html">
+                                    <button class="edit-data">Edit Profil</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- Tambahkan baris lainnya -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal Edit -->
+            <div id="editDataModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Edit Data Pegawai</h2>
+                    <form id="editForm">
+                        <label for="editNama">Nama:</label>
+                        <input type="text" id="editNama" name="nama" />
+            
+                        <label for="editJabatan">Jabatan:</label>
+                        <input type="text" id="editJabatan" name="jabatan" />
+            
+                        <label for="editNoHP">No HP:</label>
+                        <input type="text" id="editNoHP" name="no_hp" />
+            
+                        <label for="editKecamatan">Kecamatan</label>
+                        <select id="editKecamatan" onchange="updateEditKelurahan()">
+                            <option value="" disabled selected>Pilih Kecamatan</option>
+                            <option value="Astanaanyar">Astanaanyar</option>
+                            <option value="Babakan Ciparay">Babakan Ciparay</option>
+                            <option value="Bandung Wetan">Bandung Wetan</option>
+                            <option value="Batununggal">Batununggal</option>
+                            <option value="Cibiru">Cibiru</option>
+                            <option value="Cicendo">Cicendo</option>
+                            <option value="Kiaracondong">Kiaracondong</option>
+                            <option value="Lengkong">Lengkong</option>
+                        </select>
+            
+                        <label for="editKelurahan">Kelurahan</label>
+                        <select id="editKelurahan" disabled>
+                            <option value="" disabled selected>Pilih Kelurahan</option>
+                        </select>
+            
+                        <label for="editAlamat">Alamat:</label>
+                        <input type="text" id="editAlamat" name="alamat" />
+            
+                        <button type="button" onclick="saveData()">Simpan</button>
+                    </form>
+                </div>
+            </div>
+                     
+        </main>
+    </div>
+
+    <script>
+        const dataKecamatan = {
+            "Astanaanyar": ["Karanganyar", "Nyengseret", "Cibadak"],
+            "Babakan Ciparay": ["Babakan", "Sukahaji", "Margahayu Utara"],
+            "Bandung Wetan": ["Cihapit", "Citarum", "Tamansari"],
+            "Batununggal": ["Kebonwaru", "Maleer", "Binong"],
+            "Cibiru": ["Cipadung", "Palasari", "Pasirbiru"],
+            "Cicendo": ["Arjuna", "Husein Sastranegara", "Sukaraja"],
+            "Kiaracondong": ["Babakan Surabaya", "Sukapura", "Kebon Jayanti"],
+            "Lengkong": ["Cijagra", "Burangrang", "Malabar"],
+        };
+
+        function editData(id) {
+            const selectedData = {
+                // Data statis sebagai contoh
+                nama: "Harsh Kadyan",
+                jabatan: "Senior Barista",
+                no_hp: "081234567890",
+                kecamatan: "Astanaanyar",
+                kelurahan: "Karanganyar",
+                alamat: "Jl. Karanganyar No. 1",
+            };
+
+            // Populate modal fields
+            document.getElementById("editNama").value = selectedData.nama;
+            document.getElementById("editJabatan").value = selectedData.jabatan;
+            document.getElementById("editNoHP").value = selectedData.no_hp;
+            document.getElementById("editKecamatan").value = selectedData.kecamatan;
+            updateEditKelurahan(selectedData.kecamatan);
+            document.getElementById("editKelurahan").value = selectedData.kelurahan;
+            document.getElementById("editAlamat").value = selectedData.alamat;
+
+            // Show modal
+            document.getElementById("editDataModal").style.display = "block";
+        }
+
+        function updateEditKelurahan(selectedKecamatan = null) {
+            const kecamatan = selectedKecamatan || document.getElementById("editKecamatan").value;
+            const kelurahanDropdown = document.getElementById("editKelurahan");
+            kelurahanDropdown.innerHTML = '<option value="" disabled selected>Pilih Kelurahan</option>';
+            kelurahanDropdown.disabled = false;
+
+            if (dataKecamatan[kecamatan]) {
+                dataKecamatan[kecamatan].forEach((kelurahan) => {
+                    const option = document.createElement("option");
+                    option.value = kelurahan;
+                    option.textContent = kelurahan;
+                    kelurahanDropdown.appendChild(option);
+                });
+            }
+        }
+
+        function saveData() {
+            // Simpan data dari modal edit
+            closeModal();
+        }
+
+        function closeModal() {
+            document.getElementById("editDataModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
