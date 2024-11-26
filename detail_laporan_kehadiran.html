@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kehadiran Pegawai</title>
+    <link rel="stylesheet" href="detail_laporan_kehadiran.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+                <div class="menu-item">
+                    <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+                </div>
+                <div class="menu-item">
+                    <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+                </div>
+                <div class="menu-item active">
+                    <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+                </div>
+                <div class="menu-item">
+                    <a href="tambah_data.html"><span>Kelola Data</span></a>
+                </div>
+                <div class="menu-item sign-out">
+                    <a href="kafe_selaras.html"><span>Sign Out</span></a>
+                </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Employee Info -->
+            <div class="employee-info">
+                <img class="profile-picture" src="images/premium_photo-1689551670902-19b441a6afde.avif" alt="Fisca Galih">
+                <div class="info-grid">
+                    <div><strong>Nama:</strong> Fisca Galih</div>
+                    <div><strong>No. Handphone:</strong> 08999111829</div>
+                    <div><strong>Alamat:</strong> Mustika Hegar Regency Blok MHM no.9</div>
+                    <div><strong>Jabatan:</strong> Senior Barista</div>
+                    <div><strong>Email:</strong> FiscaGalih@gmail.com</div>
+                </div>
+                <a href="laporan_kehadiran.html"><button class="back">Back</button></a>
+            </div>
+
+            <!-- Periode -->
+            <div class="periode">
+                <div class="periode-input">
+                    <input type="date">
+                    <p>-</p>
+                    <input type="date">
+                </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Jam Masuk</th>
+                            <th>Jam Keluar</th>
+                            <th>Total Jam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>18-11-2024</td>
+                            <td><span>08:17</span></td>
+                            <td><span>17:30</span></td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>14-11-2024</td>
+                            <td><span>08:00</span></td>
+                            <td><span>17:00</span></td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
