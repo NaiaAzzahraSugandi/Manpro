@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi Pegawai</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="absensi_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item active">
+                <a href="absensi.html"><span>Absensi Hari Ini</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_gaji.html"><span>Laporan Gaji</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="laporan_kehadiran.html"><span>Laporan Kehadiran</span></a>
+            </div>
+            <div class="menu-item">
+                <a href="tambah_data.html"><span>Kelola Data</span></a>
+            </div>
+            <div class="menu-item sign-out">
+                <a href="kafe_selaras.html"><span>Sign Out</span></a>
+            </div>
+        </div>
+
+        <main>
+            <div class="header">
+                <h1>Absensi Pegawai</h1>
+                <div class="periode">
+                    <span>Berikut adalah informasi untuk hari ini: <strong>18 November 2024</strong></span>
+                    <span>Selamat datang, <strong>Natasha</strong>!</span>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Fisca Galih" onkeyup="searchTable()">
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Jam Masuk</th>
+                            <th>Jam Keluar</th>
+                            <th>Total Jam Kerja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>1.</td>
+                          <td>Fisca Galih</td>
+                          <td>Senior Barista</td>
+                          <td>08:07:17</td>
+                          <td>17:00:31</td>
+                          <td>9</td>
+                        </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
